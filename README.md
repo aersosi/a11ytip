@@ -6,29 +6,29 @@
 
 1. Install a11ytip:
    ```bash
-   npm install a11ytip
+   npm i @aersosi/a11ytip
    ```
 
 2. Import CSS:
    ```css
-   @import "a11ytip/src/a11ytip.css";
+   @import "@aersosi/a11ytip/src/a11ytip.css";
    ```
 
    Import CSS (minified):
    ```css
-   @import "a11ytip/dist/a11ytip.min.css";
+   @import "@aersosi/a11ytip/dist/a11ytip.min.css";
    ```
 
 3. Import TypeScript:
    ```typescript
-   import { toggleA11ytip } from "a11ytip/src/ToggleA11ytip";
+   import { toggleA11ytip } from "@aersosi/a11ytip/src/ToggleA11ytip";
    
    document.addEventListener("DOMContentLoaded", toggleA11ytip);
    ```
 
    Import TypeScript (minified):
    ```typescript
-   import { toggleA11ytip } from "a11ytip/dist/ToggleA11ytip.min.js";
+   import { toggleA11ytip } from "@aersosi/a11ytip/dist/ToggleA11ytip.min.js";
    
    document.addEventListener("DOMContentLoaded", toggleA11ytip);
    ```
