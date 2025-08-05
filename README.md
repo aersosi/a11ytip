@@ -1,5 +1,21 @@
 # a11ytip
 
+Simple, straight-forward tooltips with accessibility at their core.
+
+Extremely easy to integrate and configure with a CSS-first approach that puts user experience and accessibility front
+and center.
+
+## Features
+
+- **CSS Variables**: Effortless global theming and customization
+- **Data Attributes**: Granular control over individual tooltips (browser permitting)
+- **Lightweight**: ~7KB CSS (minified) + ~1KB JavaScript (minified)
+- **Accessibility First**: Built with screen readers and keyboard navigation in mind
+- **Beautiful Design**: Clean, modern aesthetics out of the box
+- **Theme Support**: Light and dark themes included, with custom theme support
+- **CSS-First Architecture**: Minimal JavaScript footprint, maximum flexibility
+- **No Over-Engineering**: Just tooltips that work, without unnecessary complexity
+
 ---
 
 ## Installation
@@ -26,7 +42,7 @@
    document.addEventListener("DOMContentLoaded", toggleA11ytip);
    ```
 
-   Import TypeScript (minified):
+   Import JavaScript (minified):
    ```typescript
    import { toggleA11ytip } from "@aersosi/a11ytip/dist/ToggleA11ytip.min.js";
    
@@ -40,6 +56,7 @@
 **Simplest example:**
 
 ```html
+
 <button data-a11ytip-top aria-label="Hover me">Hover me</button>
 ```
 
@@ -48,6 +65,7 @@
 ## Positioning
 
 ```html
+
 <button data-a11ytip-top aria-label="I appear on top!">Hover me</button>
 <button data-a11ytip-top-left aria-label="I'm aligned top left!">Hover me</button>
 <button data-a11ytip-top-right aria-label="I'm aligned top right!">Hover me</button>
@@ -77,6 +95,7 @@
 **Example with both attributes:**
 
 ```html
+
 <button data-a11ytip-top
         aria-label="Close the dialog window"
         data-a11ytip-text="Close dialog"
@@ -92,14 +111,27 @@ be used for accessibility.
 
 ## Force Active Status
 
-With the `data-a11ytip-active` property, the active status of an a11ytip can be permanently forced without requiring a
-hover event.
+With the `data-a11ytip-active` attribute or the `a11ytip-active` class, the active status of an a11ytip can be
+permanently forced without requiring a hover event.
 
-**Example:**
+**Example with data attribute:**
 
 ```html
+
 <button data-a11ytip-top
         data-a11ytip-active
+        aria-label="I'm always visible!"
+>
+    No hover needed
+</button>
+```
+
+**Example with `a11ytip-active` class:**
+
+```html
+
+<button data-a11ytip-top
+        class="a11ytip-active"
         aria-label="I'm always visible!"
 >
     No hover needed
@@ -194,79 +226,82 @@ You can also create your own custom themes by defining new selectors in the `a11
 The CSS a11ytips support optional `data-*` attributes that allow you to override the default styles of an individual
 a11ytip.
 
+**Note:** Data attribute-based customization is currently only supported in Chrome-based browsers.
+
 **Available data attributes:**
 
 1. `data-a11ytip-*`:
-   - Determine where the a11ytip appears relative to the element.
-   - Available positions:
-      - `data-a11ytip-top` (centered)
-      - `data-a11ytip-top-left`
-      - `data-a11ytip-top-right`
-      - `data-a11ytip-right` (centered)
-      - `data-a11ytip-right-top`
-      - `data-a11ytip-right-bottom`
-      - `data-a11ytip-bottom` (centered)
-      - `data-a11ytip-bottom-left`
-      - `data-a11ytip-bottom-right`
-      - `data-a11ytip-left` (centered)
-      - `data-a11ytip-left-top`
-      - `data-a11ytip-left-bottom`
-   - Value format: No values required, the mere presence of the attribute activates the corresponding position.
+    - Determine where the a11ytip appears relative to the element.
+    - Available positions:
+        - `data-a11ytip-top` (centered)
+        - `data-a11ytip-top-left`
+        - `data-a11ytip-top-right`
+        - `data-a11ytip-right` (centered)
+        - `data-a11ytip-right-top`
+        - `data-a11ytip-right-bottom`
+        - `data-a11ytip-bottom` (centered)
+        - `data-a11ytip-bottom-left`
+        - `data-a11ytip-bottom-right`
+        - `data-a11ytip-left` (centered)
+        - `data-a11ytip-left-top`
+        - `data-a11ytip-left-bottom`
+    - Value format: No values required, the mere presence of the attribute activates the corresponding position.
 
 2. `data-a11ytip-text`:
-   - Defines the text content of the a11ytip.
-   - This attribute takes precedence over `aria-label` when both are present.
-   - Value format: Any text string.
+    - Defines the text content of the a11ytip.
+    - This attribute takes precedence over `aria-label` when both are present.
+    - Value format: Any text string.
 
 3. `data-a11ytip-text-size`:
-   - Adjusts the font size of the a11ytip text.
-   - Value format: `<number>` followed by a unit (e.g., `16px`, `1rem`).
+    - Adjusts the font size of the a11ytip text.
+    - Value format: `<number>` followed by a unit (e.g., `16px`, `1rem`).
 
 4. `data-a11ytip-text-color`:
-   - Changes the color of the a11ytip text.
-   - Value format: A valid CSS `<color>` value (e.g., `#ffffff`, `rgb(255, 255, 255)` or `blue`).
+    - Changes the color of the a11ytip text.
+    - Value format: A valid CSS `<color>` value (e.g., `#ffffff`, `rgb(255, 255, 255)` or `blue`).
 
 5. `data-a11ytip-bg-color`:
-   - Changes the background color of the a11ytip.
-   - Value format: A valid CSS `<color>` value.
+    - Changes the background color of the a11ytip.
+    - Value format: A valid CSS `<color>` value.
 
 6. `data-a11ytip-padding-x` and `data-a11ytip-padding-y`:
-   - Adjusts the horizontal (`x`) and vertical (`y`) padding of the a11ytip box.
-   - Value format: A CSS `<length>` value (e.g., `0.5rem`, `8px`).
+    - Adjusts the horizontal (`x`) and vertical (`y`) padding of the a11ytip box.
+    - Value format: A CSS `<length>` value (e.g., `0.5rem`, `8px`).
 
 7. `data-a11ytip-border-radius`:
-   - Sets the border radius of the a11ytip box for rounded corners.
-   - Value format: A CSS `<length>` value (e.g., `0.375rem`, `5px`).
+    - Sets the border radius of the a11ytip box for rounded corners.
+    - Value format: A CSS `<length>` value (e.g., `0.375rem`, `5px`).
 
 8. `data-a11ytip-max-width`:
-   - Sets the maximum width of the a11ytip box.
-   - This prevents extremely long content from stretching the a11ytip.
-   - Value format: A CSS `<length>` value (e.g., `14ch`, `150px`).
-   - Default value: `14ch` (approximately 12 characters wide).
+    - Sets the maximum width of the a11ytip box.
+    - This prevents extremely long content from stretching the a11ytip.
+    - Value format: A CSS `<length>` value (e.g., `14ch`, `150px`).
+    - Default value: `14ch` (approximately 12 characters wide).
 
 9. `data-a11ytip-start-position` and `data-a11ytip-end-position`:
-   - Positions the a11ytip when appearing (`start`) or when it becomes active (`end`).
-   - Value format: CSS `<length>` values (e.g., `4px`, `2rem`).
+    - Positions the a11ytip when appearing (`start`) or when it becomes active (`end`).
+    - Value format: CSS `<length>` values (e.g., `4px`, `2rem`).
 
 10. `data-a11ytip-transition-duration`:
-   - Adjusts the transition duration of the a11ytip.
-   - Value format: A valid time duration (e.g., `350ms`, `0.5s`).
+- Adjusts the transition duration of the a11ytip.
+- Value format: A valid time duration (e.g., `350ms`, `0.5s`).
 
 11. `data-a11ytip-delay`:
-   - Changes the delay before the a11ytip is displayed.
-   - Value format: A number in milliseconds (e.g., `250`, `1000`).
-   - Default value: `500` (500 milliseconds).
+- Changes the delay before the a11ytip is displayed.
+- Value format: A number in milliseconds (e.g., `250`, `1000`).
+- Default value: `500` (500 milliseconds).
 
 12. `data-a11ytip-active`:
-   - Forces the active status of an a11ytip permanently, without requiring a hover event.
-   - Useful for checking positioning or during development.
-   - Value format: No values required, the mere presence of the attribute activates the effect.
+- Forces the active status of an a11ytip permanently, without requiring a hover event.
+- Useful for checking positioning or during development.
+- Value format: No values required, the mere presence of the attribute activates the effect.
 
 ---
 
 **Example with all available data attributes:**
 
 ```html
+
 <button data-a11ytip-top
         aria-label="I'm a cheeky a11ytip!"
         data-a11ytip-text="This text will be displayed"
