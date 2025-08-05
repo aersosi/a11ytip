@@ -10,6 +10,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["ToggleA11ytip.ts"],
+  "include": [
+    "src/ToggleA11ytip.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }

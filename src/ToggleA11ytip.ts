@@ -1,4 +1,4 @@
-export function toggleA11ytip() {
+export function toggleA11ytip(): void {
 	const selectors = [
 		"[data-a11ytip-top]",
 		"[data-a11ytip-top-left]",
