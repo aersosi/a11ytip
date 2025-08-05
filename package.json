@@ -1,0 +1,54 @@
+{
+  "name": "a11ytip",
+  "version": "1.0.0",
+  "description": "An accessible, customizable tooltip system with CSS and TypeScript support",
+  "main": "ToggleA11ytip.ts",
+  "style": "a11ytip.css",
+  "types": "ToggleA11ytip.ts",
+  "files": [
+    "a11ytip.css",
+    "a11ytip_config.css",
+    "ToggleA11ytip.ts",
+    "README_de.md"
+  ],
+  "scripts": {
+    "build": "tsc ToggleA11ytip.ts --declaration --outDir dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "accessibility",
+    "a11y",
+    "tooltip",
+    "css",
+    "typescript",
+    "customizable",
+    "web-component",
+    "aria",
+    "dark-mode"
+  ],
+  "author": {
+    "name": "aersosi"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aersosi/aersosi.com.git",
+    "directory": "a11ytip"
+  },
+  "bugs": {
+    "url": "https://github.com/aersosi/aersosi.com/issues"
+  },
+  "homepage": "https://github.com/aersosi/aersosi.com/tree/main/a11ytip",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
