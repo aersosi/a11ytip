@@ -11,12 +11,24 @@
 
 2. CSS importieren:
    ```css
-   @import "a11ytip";
+   @import "a11ytip/src/a11ytip.css";
+   ```
+
+   CSS (minified) importieren:
+   ```css
+   @import "a11ytip/dist/a11ytip.min.css";
    ```
 
 3. Typescript importieren:
    ```typescript
-   import { toggleA11ytip } from "a11ytip/ToggleA11ytip";
+   import { toggleA11ytip } from "a11ytip/src/ToggleA11ytip";
+   
+   document.addEventListener("DOMContentLoaded", toggleA11ytip);
+   ```
+
+   Typescript (minified) importieren:
+   ```typescript
+   import { toggleA11ytip } from "a11ytip/dist/ToggleA11ytip.min.js";
    
    document.addEventListener("DOMContentLoaded", toggleA11ytip);
    ```
@@ -28,7 +40,6 @@
 **Einfachstes Beispiel:**
 
 ```html
-
 <button data-a11ytip-top aria-label="Hover mich">Hover mich</button>
 ```
 
@@ -86,24 +97,30 @@ für Barrierefreiheit verwendet werden kann.
 Mit der Eigenschaft `data-a11ytip-active` kann der aktive Status eines a11ytip permanent erzwungen werden, ohne dass ein
 Hover-Ereignis erforderlich ist.
 
-Beispiel:
+**Beispiel:**
 
 ```html
 
-<button data-a11ytip-top data-a11ytip-active aria-label="Ich bin immer sichtbar!">Kein Hover nötig</button>
+<button data-a11ytip-top
+        data-a11ytip-active
+        aria-label="Ich bin immer sichtbar!"
+>
+    Kein Hover nötig
+</button>
 ```
 
 ---
 
-## Konfiguration des a11ytip mit a11ytip_config.css
+## Konfiguration der a11ytips mit a11ytip_config.css
 
-Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften aller a11ytips.
-Ändern Sie die Variablen entsprechend Ihren Bedürfnissen. 
+- Überschreiben Sie die Standartkonfiguration nach Ihren Bedürfnissen.
+- Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften aller a11ytips.
+- Alle typischen Farb-, Zeit- und Größenwerte können verwendet werden, z. B. #fafafa, 2s, px usw.
 
-Alle typischen Farb-, Zeit- und Größenwerte können verwendet werden, z. B. #fafafa, 2s, px usw.
+**Standartkonfiguration:**
 
 ```css
-/* a11ytip_config.css */
+/* src/a11ytip_config.css */
 
 :root {
     /* Text */
@@ -142,7 +159,7 @@ Alle typischen Farb-, Zeit- und Größenwerte können verwendet werden, z. B. #f
 **Tailwind-Konfiguration Beispiel:**
 
 ```css
-/* a11ytip_config.css */
+/* src/a11ytip_config.css */
 
 :root {
     /* Text */
