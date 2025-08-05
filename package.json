@@ -1,7 +1,7 @@
 {
-  "name": "a11ytip",
-  "version": "1.0.0",
-  "description": "An accessible, customizable tooltip system with CSS and TypeScript support",
+  "name": "@aersosi/a11ytip",
+  "version": "1.0.3",
+  "description": "An accessible, customizable, css first tooltip system",
   "main": "src/ToggleA11ytip.ts",
   "style": "a11ytip.css",
   "types": "ToggleA11ytip.ts",
@@ -9,10 +9,9 @@
     "src/a11ytip.css",
     "src/a11ytip_config.css",
     "src/ToggleA11ytip.ts",
-    "dist/ToggleA11ytip.js",
-    "dist/ToggleA11ytip.d.ts",
     "dist/ToggleA11ytip.min.js",
     "dist/a11ytip.min.css",
+    "README.md",
     "README_de.md"
   ],
   "scripts": {
@@ -29,7 +28,6 @@
     "css",
     "typescript",
     "customizable",
-    "web-component",
     "aria",
     "dark-mode"
   ],

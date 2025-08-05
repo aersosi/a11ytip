@@ -4,29 +4,29 @@
 
 ## Installation
 
-1. a11ytip installieren:
+1. Install a11ytip:
    ```bash
    npm install a11ytip
    ```
 
-2. CSS importieren:
+2. Import CSS:
    ```css
    @import "a11ytip/src/a11ytip.css";
    ```
 
-   CSS (minified) importieren:
+   Import CSS (minified):
    ```css
    @import "a11ytip/dist/a11ytip.min.css";
    ```
 
-3. Typescript importieren:
+3. Import TypeScript:
    ```typescript
    import { toggleA11ytip } from "a11ytip/src/ToggleA11ytip";
    
    document.addEventListener("DOMContentLoaded", toggleA11ytip);
    ```
 
-   Typescript (minified) importieren:
+   Import TypeScript (minified):
    ```typescript
    import { toggleA11ytip } from "a11ytip/dist/ToggleA11ytip.min.js";
    
@@ -35,89 +35,86 @@
 
 ---
 
-## Anwendung
+## Usage
 
-**Einfachstes Beispiel:**
+**Simplest example:**
 
 ```html
-<button data-a11ytip-top aria-label="Hover mich">Hover mich</button>
+<button data-a11ytip-top aria-label="Hover me">Hover me</button>
 ```
 
 ---
 
-## Positionierung
+## Positioning
 
 ```html
+<button data-a11ytip-top aria-label="I appear on top!">Hover me</button>
+<button data-a11ytip-top-left aria-label="I'm aligned top left!">Hover me</button>
+<button data-a11ytip-top-right aria-label="I'm aligned top right!">Hover me</button>
 
-<button data-a11ytip-top aria-label="Ich erscheine oben!">Hover mich</button>
-<button data-a11ytip-top-left aria-label="Ich bin oben links ausgerichtet!">Hover mich</button>
-<button data-a11ytip-top-right aria-label="Ich bin oben rechts ausgerichtet!">Hover mich</button>
+<button data-a11ytip-right aria-label="I appear on the right!">Hover me</button>
+<button data-a11ytip-right-top aria-label="I'm aligned right top!">Hover me</button>
+<button data-a11ytip-right-bottom aria-label="I'm aligned right bottom!">Hover me</button>
 
-<button data-a11ytip-right aria-label="Ich erscheine rechts!">Hover mich</button>
-<button data-a11ytip-right-top aria-label="Ich bin rechts oben ausgerichtet!">Hover mich</button>
-<button data-a11ytip-right-bottom aria-label="Ich bin rechts unten ausgerichtet!">Hover mich</button>
+<button data-a11ytip-bottom aria-label="I appear at the bottom!">Hover me</button>
+<button data-a11ytip-bottom-left aria-label="I'm aligned bottom left!">Hover me</button>
+<button data-a11ytip-bottom-right aria-label="I'm aligned bottom right!">Hover me</button>
 
-<button data-a11ytip-bottom aria-label="Ich erscheine unten!">Hover mich</button>
-<button data-a11ytip-bottom-left aria-label="Ich bin unten links ausgerichtet!">Hover mich</button>
-<button data-a11ytip-bottom-right aria-label="Ich bin unten rechts ausgerichtet!">Hover mich</button>
-
-<button data-a11ytip-left aria-label="Ich erscheine links!">Hover mich</button>
-<button data-a11ytip-left-top aria-label="Ich bin links oben ausgerichtet!">Hover mich</button>
-<button data-a11ytip-left-bottom aria-label="Ich bin links unten ausgerichtet!">Hover mich</button>
+<button data-a11ytip-left aria-label="I appear on the left!">Hover me</button>
+<button data-a11ytip-left-top aria-label="I'm aligned left top!">Hover me</button>
+<button data-a11ytip-left-bottom aria-label="I'm aligned left bottom!">Hover me</button>
 ```
 
 ---
 
 ## a11ytip Text
 
-1. Der Text eines a11ytip wird primär über das `aria-label` definiert.
-2. **Opt-Out:** Alternativ können Sie das `data-a11ytip-text`-Attribut nutzen.
-3. Beide Attribute, `aria-label` und `data-a11ytip-text`, können gleichzeitig verwendet werden. In diesem Fall hat der
-   Text aus `data-a11ytip-text` Vorrang und wird angezeigt.
+1. The text of an a11ytip is primarily defined via the `aria-label`.
+2. **Opt-Out:** Alternatively, you can use the `data-a11ytip-text` attribute.
+3. Both attributes, `aria-label` and `data-a11ytip-text`, can be used simultaneously. In this case, the
+   text from `data-a11ytip-text` takes precedence and is displayed.
 
-**Beispiel mit beiden Attributen:**
+**Example with both attributes:**
 
 ```html
-
 <button data-a11ytip-top
-        aria-label="Schließe das Dialogfenster"
-        data-a11ytip-text="Dialog schließen"
+        aria-label="Close the dialog window"
+        data-a11ytip-text="Close dialog"
 >
-    Schließen
+    Close
 </button>
 ```
 
-Das `data-a11ytip-text` definiert den angezeiten a11ytip-Text ("Dialog schließen"), während das `aria-label` weiterhin
-für Barrierefreiheit verwendet werden kann.
+The `data-a11ytip-text` defines the displayed a11ytip text ("Close dialog"), while the `aria-label` can still
+be used for accessibility.
 
 ---
 
-## Aktiv-Status erzwingen
+## Force Active Status
 
-Mit der Eigenschaft `data-a11ytip-active` kann der aktive Status eines a11ytip permanent erzwungen werden, ohne dass ein
-Hover-Ereignis erforderlich ist.
+With the `data-a11ytip-active` property, the active status of an a11ytip can be permanently forced without requiring a
+hover event.
 
-**Beispiel:**
+**Example:**
 
 ```html
-
 <button data-a11ytip-top
         data-a11ytip-active
-        aria-label="Ich bin immer sichtbar!"
+        aria-label="I'm always visible!"
 >
-    Kein Hover nötig
+    No hover needed
 </button>
 ```
 
 ---
 
-## Konfiguration der a11ytips mit a11ytip_config.css
+## Configuring a11ytips with a11ytip_config.css
 
-- Überschreiben Sie die Standartkonfiguration nach Ihren Bedürfnissen.
-- Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften aller a11ytips.
-- Alle typischen Farb-, Zeit- und Größenwerte können verwendet werden, z. B. #fafafa, 2s, px usw.
+- Override the default configuration according to your needs.
+- The CSS variables are self-explanatory and control the properties of all a11ytips.
+- All typical color, time, and size values can be used, e.g., #fafafa, 2s, px, etc.
 
-**Standartkonfiguration:**
+**Default configuration:**
 
 ```css
 /* src/a11ytip_config.css */
@@ -156,7 +153,7 @@ Hover-Ereignis erforderlich ist.
 }
 ```
 
-**Tailwind-Konfiguration Beispiel:**
+**Tailwind configuration example:**
 
 ```css
 /* src/a11ytip_config.css */
@@ -171,114 +168,112 @@ Hover-Ereignis erforderlich ist.
 
 ```
 
-## Dark Theme und benutzerdefinierte Themes
+## Dark Theme and Custom Themes
 
-Sie können das Dark Theme mit folgenden vordefinierten Selektoren nutzen:
+You can use the dark theme with the following predefined selectors:
 
-- `data-dark` Attribut: `<body data-dark>`
-- `data-theme="dark"` Attribut: `<body data-theme="dark">`
-- `.dark` Klasse: `<body class="dark">`
+- `data-dark` attribute: `<body data-dark>`
+- `data-theme="dark"` attribute: `<body data-theme="dark">`
+- `.dark` class: `<body class="dark">`
 
-Sie können auch eigene benutzerdefinierte Themes erstellen, indem Sie neue Selektoren in der `a11ytip_config.css`
-definieren.
+You can also create your own custom themes by defining new selectors in the `a11ytip_config.css`.
 
-**Zum Beispiel:**
+**For example:**
 
 ```css
-/* Benutzerdefiniertes Pink-Theme */
+/* Custom pink theme */
+
 [data-theme="pink"] {
     --a11ytip-text-color: white;
     --a11ytip-bg-color: darkmagenta;
 }
 ```
 
-## Anpassen von a11ytip mit Data-Attributen
+## Customizing a11ytip with Data Attributes
 
-Die CSS a11ytip unterstützen optionale `data-*` Attribute, die es Ihnen ermöglichen, die Standardstile im einzelnen
-a11tip
-zu überschreiben.
+The CSS a11ytips support optional `data-*` attributes that allow you to override the default styles of an individual
+a11ytip.
 
-**Verfügbare Data-Attribute:**
+**Available data attributes:**
 
 1. `data-a11ytip-*`:
-    - Bestimmen, wo das a11ytip relativ zum Element erscheint.
-    - Verfügbare Positionen:
-        - `data-a11ytip-top` (zentriert)
-        - `data-a11ytip-top-left`
-        - `data-a11ytip-top-right`
-        - `data-a11ytip-right` (zentriert)
-        - `data-a11ytip-right-top`
-        - `data-a11ytip-right-bottom`
-        - `data-a11ytip-bottom` (zentriert)
-        - `data-a11ytip-bottom-left`
-        - `data-a11ytip-bottom-right`
-        - `data-a11ytip-left` (zentriert)
-        - `data-a11ytip-left-top`
-        - `data-a11ytip-left-bottom`
-    - Werteformat: Keine Werte erforderlich, die bloße Anwesenheit des Attributs aktiviert die entsprechende Position.
+   - Determine where the a11ytip appears relative to the element.
+   - Available positions:
+      - `data-a11ytip-top` (centered)
+      - `data-a11ytip-top-left`
+      - `data-a11ytip-top-right`
+      - `data-a11ytip-right` (centered)
+      - `data-a11ytip-right-top`
+      - `data-a11ytip-right-bottom`
+      - `data-a11ytip-bottom` (centered)
+      - `data-a11ytip-bottom-left`
+      - `data-a11ytip-bottom-right`
+      - `data-a11ytip-left` (centered)
+      - `data-a11ytip-left-top`
+      - `data-a11ytip-left-bottom`
+   - Value format: No values required, the mere presence of the attribute activates the corresponding position.
 
 2. `data-a11ytip-text`:
-    - Definiert den Textinhalt des a11ytip.
-    - Dieses Attribut hat Vorrang vor `aria-label`, wenn beide vorhanden sind.
-    - Werteformat: Beliebige Textzeichenfolge.
+   - Defines the text content of the a11ytip.
+   - This attribute takes precedence over `aria-label` when both are present.
+   - Value format: Any text string.
 
 3. `data-a11ytip-text-size`:
-    - Passt die Schriftgröße des a11ytip-Texts an.
-    - Werteformat: `<Zahl>` gefolgt von einer Einheit (z.B. `16px`, `1rem`).
+   - Adjusts the font size of the a11ytip text.
+   - Value format: `<number>` followed by a unit (e.g., `16px`, `1rem`).
 
 4. `data-a11ytip-text-color`:
-    - Ändert die Farbe des a11ytip-Texts.
-    - Werteformat: Ein gültiger CSS `<color>` Wert (z.B. `#ffffff`, `rgb(255, 255, 255)` oder `blue`).
+   - Changes the color of the a11ytip text.
+   - Value format: A valid CSS `<color>` value (e.g., `#ffffff`, `rgb(255, 255, 255)` or `blue`).
 
 5. `data-a11ytip-bg-color`:
-    - Verändert die Hintergrundfarbe des a11ytip.
-    - Werteformat: Ein gültiger CSS `<color>` Wert.
+   - Changes the background color of the a11ytip.
+   - Value format: A valid CSS `<color>` value.
 
-6. `data-a11ytip-padding-x` und `data-a11ytip-padding-y`:
-    - Passt den horizontalen (`x`) und vertikalen (`y`) Innenabstand der a11ytip-Box an.
-    - Werteformat: Ein CSS `<length>` Wert (z.B. `0.5rem`, `8px`).
+6. `data-a11ytip-padding-x` and `data-a11ytip-padding-y`:
+   - Adjusts the horizontal (`x`) and vertical (`y`) padding of the a11ytip box.
+   - Value format: A CSS `<length>` value (e.g., `0.5rem`, `8px`).
 
 7. `data-a11ytip-border-radius`:
-    - Setzt den Rahmenradius der a11ytip-Box für abgerundete Ecken.
-    - Werteformat: Ein CSS `<length>` Wert (z.B. `0.375rem`, `5px`).
+   - Sets the border radius of the a11ytip box for rounded corners.
+   - Value format: A CSS `<length>` value (e.g., `0.375rem`, `5px`).
 
 8. `data-a11ytip-max-width`:
-    - Setzt die maximale Breite der a11ytip-Box.
-    - Dies verhindert, dass extrem lange Inhalte das a11ytip überdehnen.
-    - Werteformat: Ein CSS `<length>` Wert (z.B. `12ch`, `150px`).
-    - Standardwert: `12ch` (etwa 12 Zeichen breit).
+   - Sets the maximum width of the a11ytip box.
+   - This prevents extremely long content from stretching the a11ytip.
+   - Value format: A CSS `<length>` value (e.g., `14ch`, `150px`).
+   - Default value: `14ch` (approximately 12 characters wide).
 
-9. `data-a11ytip-start-position` und `data-a11ytip-end-position`:
-    - Positioniert das a11ytip beim Erscheinen (`start`) oder wenn es aktiv wird (`end`).
-    - Werteformat: CSS `<length>` Werte (z.B. `4px`, `2rem`).
+9. `data-a11ytip-start-position` and `data-a11ytip-end-position`:
+   - Positions the a11ytip when appearing (`start`) or when it becomes active (`end`).
+   - Value format: CSS `<length>` values (e.g., `4px`, `2rem`).
 
 10. `data-a11ytip-transition-duration`:
-    - Passt die Übergangsdauer des a11ytip an.
-    - Werteformat: Eine gültige Zeitdauer (z.B. `350ms`, `0.5s`).
+   - Adjusts the transition duration of the a11ytip.
+   - Value format: A valid time duration (e.g., `350ms`, `0.5s`).
 
 11. `data-a11ytip-delay`:
-    - Ändert die Verzögerung bis das a11ytip angezeigt wird.
-    - Werteformat: Eine Zahl in Millisekunden (z.B. `250`, `1000`).
-    - Standardwert: `500` (500 Millisekunden).
+   - Changes the delay before the a11ytip is displayed.
+   - Value format: A number in milliseconds (e.g., `250`, `1000`).
+   - Default value: `500` (500 milliseconds).
 
 12. `data-a11ytip-active`:
-    - Erzwingt den aktiven Status eines a11ytip permanent, ohne dass ein Hover-Ereignis erforderlich ist.
-    - Nützlich für die Überprüfung der Positionierung oder während der Entwicklung.
-    - Werteformat: Keine Werte erforderlich, die bloße Anwesenheit des Attributs aktiviert den Effekt.
+   - Forces the active status of an a11ytip permanently, without requiring a hover event.
+   - Useful for checking positioning or during development.
+   - Value format: No values required, the mere presence of the attribute activates the effect.
 
 ---
 
-**Beispiel mit allen verfügbaren Data-Attributen:**
+**Example with all available data attributes:**
 
 ```html
-
 <button data-a11ytip-top
-        aria-label="Ich bin ein freches a11ytip!"
-        data-a11ytip-text="Dieser text wird angezeigt"
+        aria-label="I'm a cheeky a11ytip!"
+        data-a11ytip-text="This text will be displayed"
 
         data-a11ytip-active
 
-        data-a11ytip-text-size="18px"
+        data-a11ytip-text-size="2rem"
         data-a11ytip-text-color="hotpink"
         data-a11ytip-bg-color="#1a1a1a"
         data-a11ytip-padding-x="1rem"
@@ -290,5 +285,6 @@ zu überschreiben.
         data-a11ytip-transition-duration="200ms"
         data-a11ytip-delay="1000"
 >
-    Hover mich
+    Hover me
 </button>
+```
