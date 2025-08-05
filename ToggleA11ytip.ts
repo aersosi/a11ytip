@@ -20,7 +20,7 @@ export function toggleA11ytip() {
 	const A11YTIP_CLASS = "a11ytip-active";
 
 	// Get delay from data-a11ytip-delay attribute or use default SHOW_DELAY
-	const getDelay = (element) => {
+	const getDelay = (element: Element) => {
 		const delayAttr = element.getAttribute("data-a11ytip-delay");
 		if (delayAttr !== null) {
 			const delay = parseInt(delayAttr, 10);

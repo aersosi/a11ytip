@@ -1,89 +1,40 @@
 # a11ytip
 
-
+---
 
 ## Installation
-1. npm install a11ytip
-2. Import css:
-```css
-@import "a11ytip";
-```
-3. Import js: 
 
-```ts
-	import { toggleA11ytip } from "a11ytip/ToggleA11ytip";
-	document.addEventListener("DOMContentLoaded", toggleA11ytip);
-```
+1. a11ytip installieren:
+   ```bash
+   npm install a11ytip
+   ```
 
+2. CSS importieren:
+   ```css
+   @import "a11ytip";
+   ```
 
-### Anwenden eines a11ytip auf ein Element
+3. Typescript importieren:
+   ```typescript
+   import { toggleA11ytip } from "a11ytip/ToggleA11ytip";
+   
+   document.addEventListener("DOMContentLoaded", toggleA11ytip);
+   ```
 
-Um ein a11ytip auf ein Element anzuwenden, muss das Element folgende Eigenschaften haben:
+---
 
-1. Ein `data-a11ytip-*` Attribut zur Definition der Position des a11ytip.
-   Verfügbare Positionen:
-    - `data-a11ytip-top` (zentriert)
-    - `data-a11ytip-top-left`
-    - `data-a11ytip-top-right`
-    - `data-a11ytip-right` (zentriert)
-    - `data-a11ytip-right-top`
-    - `data-a11ytip-right-bottom`
-    - `data-a11ytip-bottom` (zentriert)
-    - `data-a11ytip-bottom-left`
-    - `data-a11ytip-bottom-right`
-    - `data-a11ytip-left` (zentriert)
-    - `data-a11ytip-left-top`
-    - `data-a11ytip-left-bottom`
+## Anwendung
 
-2. Entweder ein `aria-label` Attribut ODER ein `data-a11ytip-text` Attribut zur Definition des Textinhalts des a11ytip.
-
-Beispiel mit `aria-label`:
+**Einfachstes Beispiel:**
 
 ```html
 
 <button data-a11ytip-top aria-label="Hover mich">Hover mich</button>
 ```
 
-Beispiel mit `data-a11ytip-text`:
+---
 
-```html
-
-<button data-a11ytip-top data-a11ytip-text="Hover mich">Hover mich</button>
-```
-
-### Verwendung von `data-a11ytip-text` vs. `aria-label`
-
-Das a11ytip-System bestimmt den Textinhalt basierend auf der folgenden Priorität:
-
-1. **Höchste Priorität**: `data-a11ytip-text` - Falls vorhanden, wird der Wert dieses Attributs als a11ytip-Text verwendet.
-2. **Fallback**: `aria-label` - Falls `data-a11ytip-text` nicht vorhanden ist, wird der `aria-label` Wert verwendet.
-
-**Wichtig: Wenn sowohl `aria-label` als auch `data-a11ytip-text` vorhanden sind, hat `data-a11ytip-text` Vorrang!**
-
-Diese Prioritätsregel bietet Ihnen folgende Vorteile:
-
-- Sie können `aria-label` für Bildschirmlesegeräte verwenden, während Sie einen anderen Text im visuellen a11ytip anzeigen
-- Sie können den a11ytip-Text überschreiben, ohne die Barrierefreiheitsbeschriftung zu beeinträchtigen
-- Sie behalten Flexibilität in Ihrem Markup
-
-Beispiel für verschiedene Texte für Bildschirmlesegeräte und visuelle a11ytip:
-
-```html
-
-<button
-	data-a11ytip-top
-	aria-label="Schließe das Dialogfenster für besseres Chackra"
-	data-a11ytip-text="Schließen"
->
-	Schließen
-</button>
-```
-
-In diesem Beispiel:
-- Bildschirmlesegeräte werden "Schließe das Dialogfenster für besseres Chackra" vorlesen (aus `aria-label`)
-- Das visuelle a11ytip wird "Schließen" anzeigen (aus `data-a11ytip-text`)
-
-Positionierung:
+## Positionierung
 
 ```html
 
@@ -104,11 +55,36 @@ Positionierung:
 <button data-a11ytip-left-bottom aria-label="Ich bin links unten ausgerichtet!">Hover mich</button>
 ```
 
-Aktiv-Status erzwingen:
+---
+
+## a11ytip Text
+
+1. Der Text eines a11ytip wird primär über das `aria-label` definiert.
+2. **Opt-Out:** Alternativ können Sie das `data-a11ytip-text`-Attribut nutzen.
+3. Beide Attribute, `aria-label` und `data-a11ytip-text`, können gleichzeitig verwendet werden. In diesem Fall hat der
+   Text aus `data-a11ytip-text` Vorrang und wird angezeigt.
+
+**Beispiel mit beiden Attributen:**
+
+```html
+
+<button data-a11ytip-top
+        aria-label="Schließe das Dialogfenster"
+        data-a11ytip-text="Dialog schließen"
+>
+    Schließen
+</button>
+```
+
+Das `data-a11ytip-text` definiert den angezeiten a11ytip-Text ("Dialog schließen"), während das `aria-label` weiterhin
+für Barrierefreiheit verwendet werden kann.
+
+---
+
+## Aktiv-Status erzwingen
 
 Mit der Eigenschaft `data-a11ytip-active` kann der aktive Status eines a11ytip permanent erzwungen werden, ohne dass ein
-Hover-Ereignis erforderlich ist. Dies ist besonders nützlich, um die Positionierung zu überprüfen oder während der
-Entwicklung.
+Hover-Ereignis erforderlich ist.
 
 Beispiel:
 
@@ -117,20 +93,14 @@ Beispiel:
 <button data-a11ytip-top data-a11ytip-active aria-label="Ich bin immer sichtbar!">Kein Hover nötig</button>
 ```
 
-Hinweise:
-
-- Das `data-a11ytip-*` Attribut bestimmt, wo das a11ytip relativ zum Element erscheint.
-- Bei einfachen Positionen (`top`, `right`, `bottom`, `left`) sind die Tooltips zentriert ausgerichtet.
-- Bei kombinierten Positionen (z.B. `right-top`) wird das Tooltip am entsprechenden Rand des Elements ausgerichtet.
-- Das a11ytip-System erstellt das a11ytip dynamisch unter Verwendung des Textinhalts (siehe Abschnitt "Verwendung von `data-a11ytip-text` vs. `aria-label`").
-- Zusätzliche Anpassungen können durch Hinzufügen weiterer `data-*` Attribute erreicht werden (siehe Beispiele unten).
-
 ---
 
-### Anpassen von a11ytip mit a11ytip_config.css
+## Konfiguration des a11ytip mit a11ytip_config.css
 
-Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften der a11ytip.
-Ändern Sie die Variablen entsprechend Ihren Bedürfnissen.
+Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften aller a11ytips.
+Ändern Sie die Variablen entsprechend Ihren Bedürfnissen. 
+
+Alle typischen Farb-, Zeit- und Größenwerte können verwendet werden, z. B. #fafafa, 2s, px usw.
 
 ```css
 /* a11ytip_config.css */
@@ -145,7 +115,7 @@ Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften der a11yti
     --a11ytip-padding-x: 0.375rem;
     --a11ytip-padding-y: 0.5rem;
     --a11ytip-border-radius: 0.375rem;
-    --a11ytip-max-width: 10ch;
+    --a11ytip-max-width: 14ch;
 
     /* Animation */
     --a11ytip-start-position: calc(100% + 4px);
@@ -154,6 +124,13 @@ Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften der a11yti
 }
 
 /* Dark Theme */
+@media (prefers-color-scheme: dark) {
+    :root:not(.light, [data-light], [data-theme="light"]) {
+        --a11ytip-text-color: black;
+        --a11ytip-bg-color: var(--color-base-100, white);
+    }
+}
+
 [data-dark],
 [data-theme="dark"],
 :root.dark {
@@ -162,7 +139,7 @@ Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften der a11yti
 }
 ```
 
-Tailwind-Konfiguration:
+**Tailwind-Konfiguration Beispiel:**
 
 ```css
 /* a11ytip_config.css */
@@ -172,37 +149,23 @@ Tailwind-Konfiguration:
     --a11ytip-text-size: theme(fontSize.sm, 0.875rem);
     --a11ytip-text-color: theme(colors.white, #ffffff);
 
-    /* Box */
-    --a11ytip-bg-color: theme(colors.gray.900, #111827);
-    --a11ytip-padding-x: theme(spacing.1 .5, 0.375rem);
-    --a11ytip-padding-y: theme(spacing.2, 0.5rem);
-    --a11ytip-border-radius: theme(borderRadius.md, 0.375rem);
-    --a11ytip-max-width: theme(spacing.40, 10rem);
-
-    /* Animation */
-    --a11ytip-start-position: calc(100% + theme(spacing.1, 0.25rem));
-    --a11ytip-end-position: calc(100% + theme(spacing.3, 0.75rem));
-    --a11ytip-transition-duration: theme(transitionDuration.300, 300ms);
+    ...
 }
 
-/* Dark Theme */
-[data-dark],
-[data-theme="dark"],
-:root.dark {
-    --a11ytip-text-color: theme(colors.black, #000000);
-    --a11ytip-bg-color: theme(colors.white, #ffffff);
-}
 ```
 
-#### Dark Theme und benutzerdefinierte Themes
+## Dark Theme und benutzerdefinierte Themes
 
-Sie können das Dark Theme mit folgenden vordefinierten Selektoren aktivieren:
+Sie können das Dark Theme mit folgenden vordefinierten Selektoren nutzen:
 
 - `data-dark` Attribut: `<body data-dark>`
 - `data-theme="dark"` Attribut: `<body data-theme="dark">`
 - `.dark` Klasse: `<body class="dark">`
 
-Sie können auch eigene benutzerdefinierte Themes erstellen, indem Sie neue Selektoren definieren. Zum Beispiel:
+Sie können auch eigene benutzerdefinierte Themes erstellen, indem Sie neue Selektoren in der `a11ytip_config.css`
+definieren.
+
+**Zum Beispiel:**
 
 ```css
 /* Benutzerdefiniertes Pink-Theme */
@@ -212,13 +175,13 @@ Sie können auch eigene benutzerdefinierte Themes erstellen, indem Sie neue Sele
 }
 ```
 
-### Anpassen von a11ytip mit Data-Attributen
+## Anpassen von a11ytip mit Data-Attributen
 
-Die CSS a11ytip unterstützen optionale `data-*` Attribute, die es Ihnen ermöglichen, die Standardstile
-zu überschreiben, die in den CSS-Variablen definiert sind. Diese Attribute bieten eine einfache Möglichkeit,
-a11ytip individuell in Ihrem Markup zu konfigurieren.
+Die CSS a11ytip unterstützen optionale `data-*` Attribute, die es Ihnen ermöglichen, die Standardstile im einzelnen
+a11tip
+zu überschreiben.
 
-Verfügbare Data-Attribute:
+**Verfügbare Data-Attribute:**
 
 1. `data-a11ytip-*`:
     - Bestimmen, wo das a11ytip relativ zum Element erscheint.
@@ -286,40 +249,29 @@ Verfügbare Data-Attribute:
     - Nützlich für die Überprüfung der Positionierung oder während der Entwicklung.
     - Werteformat: Keine Werte erforderlich, die bloße Anwesenheit des Attributs aktiviert den Effekt.
 
-Hinweise:
-
-- Jedes `data-*` Attribut ist optional. Wenn ein Attribut nicht definiert ist, wird der CSS-Fallback-Wert
-  aus den `:root` benutzerdefinierten Eigenschaften (`var(...)`) verwendet.
-- Um die Anpassung über Data-Attribute zu gewährleisten, stellen Sie sicher, dass der a11ytip-Container
-  mindestens eine der `data-a11ytip-*` Attribute hat (z.B. `data-a11ytip-top`, `data-a11ytip-right-bottom`,
-  `data-a11ytip-left-top`).
-
 ---
 
-### Beispiel mit allen Data-Attributen
+**Beispiel mit allen verfügbaren Data-Attributen:**
 
 ```html
 
-<button
-	data-a11ytip-top
-	aria-label="Ich bin ein freches Tooltip!"
-    data-a11ytip-text="Dieser text wird angezeigt"
-    
-    data-a11ytip-active
-    
-	data-a11ytip-text-size="18px"
-	data-a11ytip-text-color="hotpink"
-	data-a11ytip-bg-color="#1a1a1a"
-	data-a11ytip-padding-x="1rem"
-	data-a11ytip-padding-y="0.8rem"
-	data-a11ytip-border-radius="1rem"
-	data-a11ytip-max-width="20ch"
-	data-a11ytip-start-position="4px"
-	data-a11ytip-end-position="12px"
-	data-a11ytip-transition-duration="200ms"
-    data-a11ytip-delay="1000"
->
-	Hover mich
-</button>
-```
+<button data-a11ytip-top
+        aria-label="Ich bin ein freches a11ytip!"
+        data-a11ytip-text="Dieser text wird angezeigt"
 
+        data-a11ytip-active
+
+        data-a11ytip-text-size="18px"
+        data-a11ytip-text-color="hotpink"
+        data-a11ytip-bg-color="#1a1a1a"
+        data-a11ytip-padding-x="1rem"
+        data-a11ytip-padding-y="0.8rem"
+        data-a11ytip-border-radius="1rem"
+        data-a11ytip-max-width="20ch"
+        data-a11ytip-start-position="4px"
+        data-a11ytip-end-position="12px"
+        data-a11ytip-transition-duration="200ms"
+        data-a11ytip-delay="1000"
+>
+    Hover mich
+</button>

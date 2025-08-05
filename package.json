@@ -12,7 +12,7 @@
     "README_de.md"
   ],
   "scripts": {
-    "build": "tsc ToggleA11ytip.ts --declaration --outDir dist",
+    "build": "tsc",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
