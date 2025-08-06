@@ -83,7 +83,7 @@
 			padding-top: attr(data-a11ytip-padding-top type(<length>), var(--a11ytip-padding-top));
 			padding-bottom: attr(data-a11ytip-padding-bottom type(<length>), var(--a11ytip-padding-bottom));
 			border-radius: attr(data-a11ytip-border-radius type(<length>), var(--a11ytip-border-radius));
-			box-shadow: attr(data-a11ytip-box-shadow, var(--a11ytip-box-shadow));
+			box-shadow: attr(data-a11ytip-box-shadow type(<string>), var(--a11ytip-box-shadow));
 			transition-duration: attr(
 					data-a11ytip-transition-duration type(<time>),
 					var(--a11ytip-transition-duration)
