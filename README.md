@@ -158,9 +158,12 @@ permanently forced without requiring a hover event.
 
     /* Box */
     --a11ytip-bg-color: var(--color-base-700, black);
-    --a11ytip-padding-x: 0.375rem;
-    --a11ytip-padding-y: 0.5rem;
+    --a11ytip-padding-left: 0.375rem;
+    --a11ytip-padding-right: 0.375rem;
+    --a11ytip-padding-top: 0.5rem;
+    --a11ytip-padding-bottom: 0.5rem;
     --a11ytip-border-radius: 0.375rem;
+    --a11ytip-box-shadow: 0 1px 3px 0 theme(colors.black / 0.25), 0 1px 2px -1px theme(colors.black / 0.1);
     --a11ytip-max-width: 14ch;
 
     /* Animation */
@@ -195,9 +198,15 @@ permanently forced without requiring a hover event.
     --a11ytip-text-size: theme(fontSize.sm, 0.875rem);
     --a11ytip-text-color: theme(colors.white, #ffffff);
 
+    /* Box */
+    --a11ytip-padding-left: theme(spacing.2, 0.5rem);
+    --a11ytip-padding-right: theme(spacing.2, 0.5rem);
+    --a11ytip-padding-top: theme(spacing.1, 0.25rem);
+    --a11ytip-padding-bottom: theme(spacing.1, 0.25rem);
+    --a11ytip-box-shadow: theme(boxShadow.sm, 0 1px 2px 0 rgb(0 0 0 / 0.05));
+
     ...
 }
-
 ```
 
 ## Dark Theme and Custom Themes
@@ -264,37 +273,42 @@ a11ytip.
     - Changes the background color of the a11ytip.
     - Value format: A valid CSS `<color>` value.
 
-6. `data-a11ytip-padding-x` and `data-a11ytip-padding-y`:
-    - Adjusts the horizontal (`x`) and vertical (`y`) padding of the a11ytip box.
+6. `data-a11ytip-padding-left`, `data-a11ytip-padding-right`, `data-a11ytip-padding-top`, and
+   `data-a11ytip-padding-bottom`:
+    - Adjusts the left, right, top, and bottom padding of the a11ytip box individually.
     - Value format: A CSS `<length>` value (e.g., `0.5rem`, `8px`).
 
 7. `data-a11ytip-border-radius`:
     - Sets the border radius of the a11ytip box for rounded corners.
     - Value format: A CSS `<length>` value (e.g., `0.375rem`, `5px`).
 
-8. `data-a11ytip-max-width`:
+8. `data-a11ytip-box-shadow`:
+    - Sets the box shadow of the a11ytip box.
+    - Value format: A valid CSS `box-shadow` value (e.g., `0 4px 6px rgba(0, 0, 0, 0.1)`, `none`).
+
+9. `data-a11ytip-max-width`:
     - Sets the maximum width of the a11ytip box.
     - This prevents extremely long content from stretching the a11ytip.
     - Value format: A CSS `<length>` value (e.g., `14ch`, `150px`).
     - Default value: `14ch` (approximately 12 characters wide).
 
-9. `data-a11ytip-start-position` and `data-a11ytip-end-position`:
+10. `data-a11ytip-start-position` and `data-a11ytip-end-position`:
     - Positions the a11ytip when appearing (`start`) or when it becomes active (`end`).
     - Value format: CSS `<length>` values (e.g., `4px`, `2rem`).
 
-10. `data-a11ytip-transition-duration`:
-- Adjusts the transition duration of the a11ytip.
-- Value format: A valid time duration (e.g., `350ms`, `0.5s`).
+11. `data-a11ytip-transition-duration`:
+    - Adjusts the transition duration of the a11ytip.
+    - Value format: A valid time duration (e.g., `350ms`, `0.5s`).
 
-11. `data-a11ytip-delay`:
-- Changes the delay before the a11ytip is displayed.
-- Value format: A number in milliseconds (e.g., `250`, `1000`).
-- Default value: `500` (500 milliseconds).
+12. `data-a11ytip-delay`:
+    - Changes the delay before the a11ytip is displayed.
+    - Value format: A number in milliseconds (e.g., `250`, `1000`).
+    - Default value: `500` (500 milliseconds).
 
 12. `data-a11ytip-active`:
-- Forces the active status of an a11ytip permanently, without requiring a hover event.
-- Useful for checking positioning or during development.
-- Value format: No values required, the mere presence of the attribute activates the effect.
+    - Forces the active status of an a11ytip permanently, without requiring a hover event.
+    - Useful for checking positioning or during development.
+    - Value format: No values required, the mere presence of the attribute activates the effect.
 
 ---
 
@@ -311,9 +325,12 @@ a11ytip.
         data-a11ytip-text-size="2rem"
         data-a11ytip-text-color="hotpink"
         data-a11ytip-bg-color="#1a1a1a"
-        data-a11ytip-padding-x="1rem"
-        data-a11ytip-padding-y="0.8rem"
+        data-a11ytip-padding-left="1rem"
+        data-a11ytip-padding-right="1rem"
+        data-a11ytip-padding-top="0.8rem"
+        data-a11ytip-padding-bottom="0.8rem"
         data-a11ytip-border-radius="1rem"
+        data-a11ytip-box-shadow="0 10px 25px rgba(0, 0, 0, 0.2)"
         data-a11ytip-max-width="20ch"
         data-a11ytip-start-position="4px"
         data-a11ytip-end-position="12px"

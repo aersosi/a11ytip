@@ -46,9 +46,12 @@
 
 		/* Box */
 		background-color: var(--a11ytip-bg-color);
-		padding-block: var(--a11ytip-padding-x);
-		padding-inline: var(--a11ytip-padding-y);
+		padding-left: var(--a11ytip-padding-left);
+		padding-right: var(--a11ytip-padding-right);
+		padding-top: var(--a11ytip-padding-top);
+		padding-bottom: var(--a11ytip-padding-bottom);
 		border-radius: var(--a11ytip-border-radius);
+		box-shadow: var(--a11ytip-box-shadow);
 
 		/* Animation */
 		opacity: 0;
@@ -75,9 +78,12 @@
 			font-size: attr(data-a11ytip-text-size type(<length>), var(--a11ytip-text-size));
 			color: attr(data-a11ytip-text-color type(<color>), var(--a11ytip-text-color));
 			background-color: attr(data-a11ytip-bg-color type(<color>), var(--a11ytip-bg-color));
-			padding-block: attr(data-a11ytip-padding-x type(<length>), var(--a11ytip-padding-x));
-			padding-inline: attr(data-a11ytip-padding-y type(<length>), var(--a11ytip-padding-y));
+			padding-left: attr(data-a11ytip-padding-left type(<length>), var(--a11ytip-padding-left));
+			padding-right: attr(data-a11ytip-padding-right type(<length>), var(--a11ytip-padding-right));
+			padding-top: attr(data-a11ytip-padding-top type(<length>), var(--a11ytip-padding-top));
+			padding-bottom: attr(data-a11ytip-padding-bottom type(<length>), var(--a11ytip-padding-bottom));
 			border-radius: attr(data-a11ytip-border-radius type(<length>), var(--a11ytip-border-radius));
+			box-shadow: attr(data-a11ytip-box-shadow, var(--a11ytip-box-shadow));
 			transition-duration: attr(
 					data-a11ytip-transition-duration type(<time>),
 					var(--a11ytip-transition-duration)
