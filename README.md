@@ -5,6 +5,8 @@ Simple, straight-forward tooltips with accessibility at their core.
 Extremely easy to integrate and configure with a CSS-first approach that puts user experience and accessibility front
 and center.
 
+![a11ytip Cover](a11ytip-cover.webp)
+
 ## Features
 
 - **CSS Variables**: Effortless global theming and customization
@@ -167,9 +169,9 @@ permanently forced without requiring a hover event.
     --a11ytip-max-width: 14ch;
 
     /* Animation */
-    --a11ytip-start-position: calc(100% + 4px);
-    --a11ytip-end-position: calc(100% + 12px);
-    --a11ytip-transition-duration: 350ms;
+    --a11ytip-start-position: calc(100% + 2px);
+    --a11ytip-end-position: calc(100% + 8px);
+    --a11ytip-transition-duration: 250ms;
 }
 
 /* Dark Theme */
