@@ -51,7 +51,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aersosi/a11ytip.git",
+    "url": "git+https://github.com/aersosi/a11ytip.git",
     "directory": "a11ytip"
   },
   "bugs": {
