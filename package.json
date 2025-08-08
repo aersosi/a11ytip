@@ -2,18 +2,22 @@
   "name": "@aersosi/a11ytip",
   "version": "1.1.2",
   "description": "An accessible, customizable, css first tooltip system",
-  "main": "src/ToggleA11ytip.ts",
-  "style": "a11ytip.css",
-  "types": "ToggleA11ytip.ts",
+  "main": "dist/ToggleA11ytip.min.js",
+  "style": "dist/a11ytip.min.css",
+  "types": "dist/ToggleA11ytip.d.ts",
   "files": [
-    "src/a11ytip.css",
-    "src/a11ytip_config.css",
-    "src/ToggleA11ytip.ts",
-    "dist/ToggleA11ytip.min.js",
-    "dist/a11ytip.min.css",
+    "dist/*",
+    "src/ToggleA11ytip.d.ts",
     "README.md",
-    "README_de.md"
+    "LICENSE"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/ToggleA11ytip.min.js",
+      "require": "./dist/ToggleA11ytip.min.js",
+      "types": "./dist/ToggleA11ytip.d.ts"
+    }
+  },
   "scripts": {
     "build": "tsc",
     "minify:js": "terser dist/ToggleA11ytip.js -o dist/ToggleA11ytip.min.js --compress --mangle",
