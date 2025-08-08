@@ -26,21 +26,17 @@ Easy to integrate, easy to configure, CSS-first with accessibility built in.
    npm i @aersosi/a11ytip
    ```
 
-2. Import CSS:
+2. Import minified CSS:
 
    ```css
-   @import "@aersosi/a11ytip/src/a11ytip.css";
-   /*or import minified*/ 
-   @import "@aersosi/a11ytip/dist/a11ytip.min.css";
+   @import "@aersosi/a11ytip/css";
    ```
 
-3. Import TypeScript:
+3. Import minified JavaScript:
 
    ```typescript
-   import {toggleA11ytip} from "@aersosi/a11ytip/src/ToggleA11ytip";
-   // or import minified
-   import {toggleA11ytip} from "@aersosi/a11ytip/dist/ToggleA11ytip.min.js"; 
-
+   import {toggleA11ytip} from "@aersosi/a11ytip/js";
+   
    document.addEventListener("DOMContentLoaded", toggleA11ytip);
    ```
 
