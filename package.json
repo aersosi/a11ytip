@@ -1,6 +1,6 @@
 {
   "name": "@aersosi/a11ytip",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "An accessible, customizable, css first tooltip system",
   "main": "src/ToggleA11ytip.ts",
   "style": "a11ytip.css",
@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "minify:js": "terser dist/ToggleA11ytip.js -o dist/ToggleA11ytip.min.js --compress --mangle && rimraf dist/ToggleA11ytip.js dist/ToggleA11ytip.d.ts",
+    "minify:js": "terser dist/ToggleA11ytip.js -o dist/ToggleA11ytip.min.js --compress --mangle",
     "minify:css": "lightningcss --minify --bundle --targets '>= 0.25%' src/a11ytip.css -o dist/a11ytip.min.css",
     "minify": "npm run minify:js && npm run minify:css",
     "build:prod": "npm run build && npm run minify"
@@ -46,7 +46,6 @@
   "homepage": "https://github.com/aersosi/a11ytip",
   "devDependencies": {
     "lightningcss-cli": "^1.30.1",
-    "rimraf": "^6.0.1",
     "terser": "^5.19.2",
     "typescript": "^5.0.0"
   },
