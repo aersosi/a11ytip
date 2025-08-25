@@ -1,7 +1,7 @@
 # a11ytip
 
 Simple, straightforward tooltips.
-Easy to integrate, easy to configure, CSS-first with accessibility built in.
+Easy to implement and to configure. CSS-first with accessibility built in.
 
 ![a11ytip Cover](a11ytip-cover.webp)
 
@@ -22,23 +22,23 @@ Easy to integrate, easy to configure, CSS-first with accessibility built in.
 
 1. Install a11ytip:
 
-   ```bash
-   npm i @aersosi/a11ytip
-   ```
+```bash
+npm i @aersosi/a11ytip
+```
 
 2. Import minified CSS:
 
-   ```css
-   @import "@aersosi/a11ytip/css";
-   ```
+```css
+@import "@aersosi/a11ytip/css";
+```
 
 3. Import minified JavaScript:
 
-   ```typescript
-   import {toggleA11ytip} from "@aersosi/a11ytip/js";
-   
-   document.addEventListener("DOMContentLoaded", toggleA11ytip);
-   ```
+```typescript
+import {toggleA11ytip} from "@aersosi/a11ytip/js";
+
+document.addEventListener("DOMContentLoaded", toggleA11ytip);
+```
 
 ## Usage
 
@@ -144,6 +144,8 @@ permanently forced.
   --a11ytip-start-position: calc(100% + 2px);
   --a11ytip-end-position: calc(100% + 8px);
   --a11ytip-transition-duration: 250ms;
+    
+  --a11ytip-z-index: 100;
 }
 
 /* Dark Theme */
@@ -285,6 +287,11 @@ a11ytip.
    - Useful for checking positioning or during development.
    - Value format: No values required, the mere presence of the attribute activates the effect.
 
+14. `data-a11ytip-z-index`:
+   - Controls the stacking order of the a11ytip, determining whether it appears above or below other elements.
+   - Higher values ensure the tooltip appears on top of other page content.
+   - Value format: A positive integer (e.g., `100`, `999`, `1000`).
+   - Default value: `100`.
 ---
 
 **Example with all available data attributes:**
@@ -311,6 +318,7 @@ a11ytip.
   data-a11ytip-end-position="12px"
   data-a11ytip-transition-duration="200ms"
   data-a11ytip-delay="1000"
+  data-a11ytip-z-index="999"
 >
   Hover me
 </button>

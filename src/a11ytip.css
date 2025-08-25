@@ -48,6 +48,7 @@
         width: max-content;
         max-width: var(--a11ytip-max-width);
         text-align: center;
+        z-index: var(--a11ytip-z-index);
 
         /* Text */
         font-size: var(--a11ytip-text-size);
@@ -98,6 +99,7 @@
                     data-a11ytip-transition-duration type(< time >),
                     var(--a11ytip-transition-duration)
             );
+            z-index: attr(data-a11ytip-z-index type(< integer >), var(--a11ytip-z-index));
         }
     }
 }

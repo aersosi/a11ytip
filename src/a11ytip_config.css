@@ -17,6 +17,8 @@
     --a11ytip-start-position: calc(100% + 2px);
     --a11ytip-end-position: calc(100% + 8px);
     --a11ytip-transition-duration: 250ms;
+
+    --a11ytip-z-index: 100;
 }
 
 /* src/a11ytip_config.css */
