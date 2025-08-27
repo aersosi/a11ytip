@@ -150,7 +150,7 @@ permanently forced.
 
 /* Dark Theme */
 @media (prefers-color-scheme: dark) {
-  :root:not(.light, [data-light], [data-theme="light"]) {
+  :root {
    --a11ytip-text-color: black;
    --a11ytip-bg-color: theme(color.base.100, white);
   }
