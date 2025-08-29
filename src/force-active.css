@@ -1,0 +1,73 @@
+.a11ytip-force-active {
+    [data-a11ytip-top]::after,
+    [data-a11ytip-top-left]::after,
+    [data-a11ytip-top-right]::after {
+        bottom: var(--a11ytip-end-position);
+        opacity: 1;
+    }
+
+    [data-a11ytip-right]::after,
+    [data-a11ytip-right-top]::after,
+    [data-a11ytip-right-bottom]::after {
+        left: var(--a11ytip-end-position);
+        opacity: 1;
+    }
+
+    [data-a11ytip-bottom]::after,
+    [data-a11ytip-bottom-left]::after,
+    [data-a11ytip-bottom-right]::after {
+        top: var(--a11ytip-end-position);
+        opacity: 1;
+    }
+
+    [data-a11ytip-left]::after,
+    [data-a11ytip-left-top]::after,
+    [data-a11ytip-left-bottom]::after {
+        right: var(--a11ytip-end-position);
+        opacity: 1;
+    }
+}
+
+[data-a11ytip-force-active] {
+    &[data-a11ytip-top]::after,
+    &[data-a11ytip-top-left]::after,
+    &[data-a11ytip-top-right]::after {
+        bottom: var(--a11ytip-end-position);
+        opacity: 1;
+    }
+
+    &[data-a11ytip-right]::after,
+    &[data-a11ytip-right-top]::after,
+    &[data-a11ytip-right-bottom]::after {
+        left: var(--a11ytip-end-position);
+        opacity: 1;
+    }
+
+    &[data-a11ytip-bottom]::after,
+    &[data-a11ytip-bottom-left]::after,
+    &[data-a11ytip-bottom-right]::after {
+        top: var(--a11ytip-end-position);
+        opacity: 1;
+    }
+
+    &[data-a11ytip-left]::after,
+    &[data-a11ytip-left-top]::after,
+    &[data-a11ytip-left-bottom]::after {
+        right: var(--a11ytip-end-position);
+        opacity: 1;
+    }
+}
+
+
+/* I prefer readability over writing smart code :) */
+/* Compiles to example: */
+
+/*.a11ytip-force-active [data-a11ytip-top]::after {*/
+/*    bottom: var(--a11ytip-end-position);*/
+/*    opacity: 1;*/
+/*}*/
+
+/*[data-a11ytip-force-active][data-a11ytip-top]::after {*/
+/*    bottom: var(--a11ytip-end-position);*/
+/*    opacity: 1;*/
+/*}*/
