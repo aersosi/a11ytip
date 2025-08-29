@@ -29,11 +29,9 @@
   "scripts": {
     "build": "tsc",
     "minify:js": "terser dist/ToggleA11ytip.js -o dist/ToggleA11ytip.min.js --compress --mangle",
-    "minify:css": "lightningcss --minify --bundle --targets '>= 0.25%' src/a11ytip.css -o dist/a11ytip.min.css",
+    "minify:css": "lightningcss --minify --bundle --targets '>= 0.25%' src/index.css -o dist/a11ytip.min.css",
     "minify": "npm run minify:js && npm run minify:css",
-    "build:prod": "npm run build && npm run minify",
-    "pack": "npm pack",
-    "unpack": "tar -xvzf aersosi-a11ytip-1.1.3.tgz"
+    "build:prod": "npm run build && npm run minify"
   },
   "keywords": [
     "accessibility",
