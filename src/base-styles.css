@@ -14,16 +14,6 @@
 [data-a11ytip-left-bottom] {
     position: relative;
 
-    &:focus-visible {
-        outline: 2px solid theme(color.primary.400, blue);
-    }
-
-    &:focus-visible::after {
-        outline: none;
-        box-shadow: none;
-        border: none;
-    }
-
     &[aria-label]::after {
         /* Only aria-label -> use aria-label text  */
         content: attr(aria-label);
@@ -264,32 +254,3 @@
     }
 }
 
-/* Focus Styles */
-
-[data-a11ytip-] {
-    &:focus-visible {
-        outline: 2px solid theme(color.primary.600, blue);
-    }
-
-    &:focus-visible::after {
-        outline: none;
-        box-shadow: none;
-        border: none;
-    }
-}
-
-[data-dark],
-[data-theme="dark"],
-:root.dark {
-    [data-a11ytip-] {
-        &:focus-visible {
-            outline: 2px solid theme(color.primary.400, blue);
-        }
-
-        &:focus-visible::after {
-            outline: none;
-            box-shadow: none;
-            border: none;
-        }
-    }
-}
