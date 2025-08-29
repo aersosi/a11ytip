@@ -1,0 +1,19 @@
+/* Hide a11ytip on typical touch devices if .a11ytip-no-touch is in the dom */
+@media (hover: none) and (pointer: coarse) {
+    .a11ytip-no-touch {
+        [data-a11ytip-top]::after,
+        [data-a11ytip-top-left]::after,
+        [data-a11ytip-top-right]::after,
+        [data-a11ytip-right]::after,
+        [data-a11ytip-right-top]::after,
+        [data-a11ytip-right-bottom]::after,
+        [data-a11ytip-bottom]::after,
+        [data-a11ytip-bottom-left]::after,
+        [data-a11ytip-bottom-right]::after,
+        [data-a11ytip-left]::after,
+        [data-a11ytip-left-top]::after,
+        [data-a11ytip-left-bottom]::after {
+            display: none;
+        }
+    }
+}
