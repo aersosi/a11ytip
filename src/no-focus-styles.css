@@ -1,0 +1,61 @@
+/* No focus Styles */
+
+/* prevent a11ytip having ring or border when a11ytip element is focused */
+
+[data-a11ytip-top],
+[data-a11ytip-top-left],
+[data-a11ytip-top-right],
+[data-a11ytip-right],
+[data-a11ytip-right-top],
+[data-a11ytip-right-bottom],
+[data-a11ytip-bottom],
+[data-a11ytip-bottom-left],
+[data-a11ytip-bottom-right],
+[data-a11ytip-left],
+[data-a11ytip-left-top],
+[data-a11ytip-left-bottom] {
+
+    /* For some reason it's not possible to just hide styles on ::after */
+
+    &:focus-visible::after {
+        outline: none;
+        border: none;
+    }
+
+    /* This is also needed */
+
+    &:focus-visible {
+        outline: 2px solid theme(color.primary.600, blue);
+    }
+
+}
+
+[data-dark],
+[data-theme="dark"],
+:root.dark {
+    [data-a11ytip-top],
+    [data-a11ytip-top-left],
+    [data-a11ytip-top-right],
+    [data-a11ytip-right],
+    [data-a11ytip-right-top],
+    [data-a11ytip-right-bottom],
+    [data-a11ytip-bottom],
+    [data-a11ytip-bottom-left],
+    [data-a11ytip-bottom-right],
+    [data-a11ytip-left],
+    [data-a11ytip-left-top],
+    [data-a11ytip-left-bottom] {
+        /* For some reason it's not possible to just hide styles on ::after */
+
+        &:focus-visible::after {
+            outline: none;
+            border: none;
+        }
+
+        /* This is also needed */
+
+        &:focus-visible {
+            outline: 2px solid theme(color.primary.400, blue);
+        }
+    }
+}
